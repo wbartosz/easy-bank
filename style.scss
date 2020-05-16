@@ -34,39 +34,30 @@ section {
     // width: 100%;
 }
 
-@media (min-width: 768px) {
-    .container {
-        padding: 0 32px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 64px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .container {
-        padding: 0 150px;
-    }
+h1, h2, h3 {
+    color: $primary-dark-blue;
 }
 
 h1 {
     font-size: 55px;
-    color: $primary-dark-blue;
     margin-bottom: 40px;
 }
 
 h2 {
-    font-size: 28px;
-    color: $primary-dark-blue;
+    font-size: 38px;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
 .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 170px;
+    padding-bottom: 170px;
 
     &__text {
         width: 40%;
@@ -75,16 +66,7 @@ h2 {
             width: 50%;
         }
     }
-
-    &__description {
-        color: $neutral-grayish-blue;
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 40px;
-        line-height: 1.4;
-    }
 }
-
 
 header {
     display: flex;
@@ -113,6 +95,37 @@ header {
     }
 }
 
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+p {
+    color: $neutral-grayish-blue;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: inline-flex;
+        flex: 0 1 100%;
+        flex-direction: column;
+        box-sizing: border-box;
+        text-align: center;
+
+        img {
+            margin-bottom: 35px;
+            align-self: center;
+        }
+    }
+}
+
 button {
     cursor: pointer;
 
@@ -129,7 +142,7 @@ button {
 
 .background {
     &--gray {
-        background-color: $neutral-very-light-gray;
+        background: linear-gradient(to bottom, $neutral-very-light-gray, $neutral-white);
     }
 }
 
@@ -140,5 +153,46 @@ button {
 
     a { 
         color: hsl(228, 45%, 44%);
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .features {
+        &__item {
+            flex: 0 1 25%;
+            padding-right: 20px;
+            text-align: left;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            img {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        padding-left: 150px;
+        padding-right: 150px;
     }
 }
