@@ -18,20 +18,13 @@ $neutral-white: hsl(0, 0%, 100%);
     font-weight: 300;
 }
 
-body {
-    // margin: 0 $side-margin;
-}
-
-section {
-    // margin: 0 $side-margin;
-}
-
-
 .container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1376px;
     // width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 h1, h2, h3 {
@@ -56,16 +49,9 @@ h3 {
 }
 
 .hero {
-    padding-top: 170px;
-    padding-bottom: 170px;
-
-    &__text {
-        width: 40%;
-
-        &--half {
-            width: 50%;
-        }
-    }
+    padding-top: 120px;
+    padding-bottom: 120px;
+    text-align: center;
 }
 
 header {
@@ -98,6 +84,7 @@ header {
 section {
     padding-top: 100px;
     padding-bottom: 100px;
+    text-align: center;
 }
 
 p {
@@ -142,6 +129,10 @@ button {
 
 .background {
     &--gray {
+        background: $neutral-very-light-gray;
+    }
+
+    &--gray-gradient {
         background: linear-gradient(to bottom, $neutral-very-light-gray, $neutral-white);
     }
 }
@@ -157,16 +148,10 @@ button {
 }
 
 @media (min-width: 768px) {
-    .container {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-
     .features {
         &__item {
-            flex: 0 1 25%;
+            flex: 0 1 50%;
             padding-right: 20px;
-            text-align: left;
 
             &:last-child {
                 padding-right: 0;
@@ -175,24 +160,41 @@ button {
             p {
                 font-size: 16px;
             }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    section {
+        text-align: left;
+    }
+    
+    .features {
+        &__item {
+            flex: 0 1 25%;
+            text-align: left;
 
             img {
                 align-self: flex-start;
             }
         }
     }
-}
 
-@media (min-width: 1024px) {
-    .container {
-        padding-left: 64px;
-        padding-right: 64px;
+    .hero {
+        padding-top: 170px;
+        padding-bottom: 170px;
+
+        &__text {
+            text-align: left;
+            width: 40%;
+    
+            &--half {
+                width: 50%;
+            }
+        }
     }
 }
 
 @media (min-width: 1440px) {
-    .container {
-        padding-left: 150px;
-        padding-right: 150px;
-    }
+    
 }
